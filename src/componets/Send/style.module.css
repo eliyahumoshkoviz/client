@@ -1,0 +1,13 @@
+.send {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    width: 114px;
+    padding: 8px;
+    border-radius: 12px;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+  }
+
+  

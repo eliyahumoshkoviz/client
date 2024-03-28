@@ -1,0 +1,9 @@
+.main{
+    background-color: var(--primary-color);
+    padding: 6px;
+    color: #ffff;
+    border-radius: 8px;
+    width: fit-content;
+    font-weight: 600;
+
+}
