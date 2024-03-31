@@ -3,11 +3,16 @@
   align-items: center;
   gap: 5px;
   width: 372px;
-  /* background-color: #FFFFFF; */
-  background-color: gray;
+  background-color: #FFFFFF;
   border-radius: 7px;
   padding: 7px;
 }
+
+.main:hover {
+  background-color: #f1eeee;
+  transition: ease-out 1s;
+}
+
 .img {
   height: 42px;
   width: 42px;

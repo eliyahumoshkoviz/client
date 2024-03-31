@@ -8,7 +8,7 @@ export default function Trash() {
   return (
 
     <div className={style.main}>
-      <IoTrashOutline />
+      <IoTrashOutline className={style.icon} />
       <HiOutlineDotsVertical />
     </div>
   );
