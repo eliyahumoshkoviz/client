@@ -1,0 +1,18 @@
+.main {
+  position: relative;
+  width: 128px;
+  height: 42px;
+  border-radius: 9px;
+  background-color: #fd5e5e;
+}
+
+.inner {
+  position: absolute;
+  top: 5px;
+  right: -10px;
+  width: 32.53px;
+  height: 32.53px;
+  border-radius: 7px;
+  rotate: -45deg;
+  background-color: #fd5e5e;
+}
