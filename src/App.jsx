@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Badge from "./componets/Badge";
 import Send from "./componets/Send";
 import Trash from "./componets/Trash";
-import EmailLi from "./componets/EmailLi/insex";
+import EmailLi from "./componets/EmailLi";
 import NewMsgBtn from "./componets/NewMsgBtn";
 import InputSearch from "./componets/InputSearch";
 import LabelBadge from "./componets/LabelBadge";
@@ -11,6 +11,9 @@ import Popup from "./componets/PopUp";
 import DataContext from "./context/DataContext";
 import Register from "./pages/Register";
 import NavMain from "./componets/NavMain"
+import NavMessage from "./componets/NavMessage"
+import Layout from "./componets/Layout";
+import EmailList from "./componets/EmailsList";
 
 export default function App() {
   const [count, setCount] = useState(45);
@@ -40,7 +43,12 @@ export default function App() {
         {/* <Popup/> */}
         {/* <Login /> */}
         {/* <Register/> */}
-        <NavMain/>
+        {/* <NavMain/> */}
+        {/* <NavMessage/> */}
+        {/* <EmailList/> */}
+
+
+        <Layout/>
       </div>
     </DataContext.Provider>
   );
