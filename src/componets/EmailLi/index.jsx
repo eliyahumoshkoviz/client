@@ -18,7 +18,7 @@ export default function EmailLi({count ,email }) {
 
       onClick={handleClick}
       >
-      <img className={style.img} src="./img/catering-kolkata.jpg" alt="" />
+      <img className={style.img} src="/img/images.jpg" alt="" />
       <div className={style.content}>
         <h3 className={style.title}>Jessica Koel</h3>
         <p className={style.text}>{subject}</p>

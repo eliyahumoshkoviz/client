@@ -23,7 +23,7 @@ export default function NavMain() {
   return (
     <>
     <div className={style.container}>
-      <img src="./vite.svg" alt="img" />
+      <img src="/img/logo-mail-box.png" alt="img" />
       <ul className={style.ul}>
         {iconsData.map((obj) => (
           <div className={style.border} key={obj.title}>
@@ -40,7 +40,7 @@ export default function NavMain() {
           </div>
         ))}
       </ul>
-      <img src="./vite.svg" alt="img" />
+      <img src="/img/king.jpg" alt="img" />
     </div>
     </>
   );

@@ -10,16 +10,16 @@ import { FaPen } from "react-icons/fa";
 import { CiInboxIn } from "react-icons/ci";
 import { LuSend } from "react-icons/lu";
 import { MdDelete, MdKeyboardArrowLeft } from "react-icons/md";
-import { Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function NavMessage() {
   const typeData = [
-    { icon: CiInboxIn, type: "Inbox" },
-    { icon: LuSend, type: "Sent Emails" },
-    { icon: FaStar, type: "favorie" },
-    { icon: FaPen, type: "Draft" },
-    { icon: MdDelete, type: "Deleted" },
-    { icon: RiArrowDownSLine, type: "more" },
+    { icon: CiInboxIn, type: "Inbox", to: "index" },
+    { icon: LuSend, type: "Sent Emails", to: "send" },
+    { icon: FaStar, type: "favorie", to: "favorite" },
+    { icon: FaPen, type: "Draft", to: "draft" },
+    { icon: MdDelete, type: "Deleted", to: "deleted" },
+    { icon: RiArrowDownSLine, type: "more", to: "more" },
   ];
   const badgeData = [
     { color: "red", label: "Label 1" },
@@ -29,8 +29,6 @@ export default function NavMessage() {
   ];
   return (
     <>
-      <Outlet />
-
       <div className={style.container}>
         <div className={style.title}>
           <MdKeyboardArrowLeft className={style.iconTitle} />{" "}
@@ -39,18 +37,35 @@ export default function NavMessage() {
         <NewMsgBtn />
         <ul className={style.ul}>
           {typeData.map((obj, index) => (
-            <li className={style.typesEmail} key={index}>
-              <obj.icon className={style.icon} />
-              {obj.type}
-            </li>
+
+            <NavLink
+              to={`${obj.to}`}
+              className={({ isActive }) =>
+                isActive ? style.active : ""
+              }
+            >
+              <li className={style.typesEmail} key={index} title={obj.type}>
+                <obj.icon className={style.icon} />
+                {obj.type}
+
+              </li>
+            </NavLink>
+
+            // < li className={style.typesEmail} key={index} >
+            //   <obj.icon className={style.icon} />
+            //   {obj.type}
+            // </li>
           ))}
         </ul>
+
+
+
         {/* <div>
             {badgeData.map((badge, index) => (
                 <LabelBadge key={index} color={badge.color} label={badge.label} />
             ))}
             </div> */}
-      </div>
+      </div >
     </>
   );
 }
