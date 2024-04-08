@@ -4,7 +4,7 @@ import { BiSolidShare } from "react-icons/bi";
 
 
 export default function MsgLi ({ msg, user }) {
-  const [expand, setExpand] = useState(false);
+  const [expand, setExpand] = useState(true);
   const { mail } = user
   const { from, content } = msg
   const isRecive = from == mail

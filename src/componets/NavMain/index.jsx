@@ -21,7 +21,7 @@ export default function NavMain() {
   ];
 
   return (
-    <>
+    
     <div className={style.container}>
       <img src="/img/logo-mail-box.png" alt="img" />
       <ul className={style.ul}>
@@ -42,6 +42,5 @@ export default function NavMain() {
       </ul>
       <img src="/img/king.jpg" alt="img" />
     </div>
-    </>
   );
 }

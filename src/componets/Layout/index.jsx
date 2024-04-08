@@ -8,19 +8,18 @@ import EmailPageLyout from "../EmailPageLyout";
 export default function Layout() {
   return (
     <Routes>
-      <Route path="settings" element={<NavMainLyout />} />
+      <Route path="/" element={<NavMainLyout />} />
       <Route element={<NavMainLyout />}>
         <Route path="timer" element={<h1>timer</h1>} />
         <Route path="task" element={<h1>task</h1>} />
         <Route path="watch" element={<h1>watch</h1>} />
+        <Route path="stats" element={<h1>stats</h1>} />
         <Route path="videocam" element={<h1>videocom</h1>} />
-        <Route path="emails" element={<NavMessageLyout />} >
-          <Route path=":emailType" element={<EmailsListLyout />} >
-            <Route path=":emailId" element={<EmailPageLyout/>} />
+        <Route path="emails" element={<NavMessageLyout />}>
+          <Route path=":emailType" element={<EmailsListLyout />}>
+            <Route path=":emailId" element={<EmailPageLyout />} />
           </Route>
-
         </Route>
-
       </Route>
     </Routes>
   );

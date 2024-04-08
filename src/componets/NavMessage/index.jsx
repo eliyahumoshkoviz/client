@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "./style.module.css";
 
 import LabelBadge from "../LabelBadge";
@@ -10,9 +10,32 @@ import { FaPen } from "react-icons/fa";
 import { CiInboxIn } from "react-icons/ci";
 import { LuSend } from "react-icons/lu";
 import { MdDelete, MdKeyboardArrowLeft } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { NavLink , useParams } from "react-router-dom";
+import { useState } from "react";
+import axios from 'axios';
+
+
 
 export default function NavMessage() {
+  const [dataMail,setDataMail]= useState([])
+
+  let { emailType } = useParams();
+
+  useEffect(() => {
+      setDataMail([])
+      axios.get(`http://localhost:5050/user/${emailType}`)
+          .then(response => {
+              console.log(response)
+              setDataMail(response.data.chats);
+              console.log(response.data.chats);
+              console.log("senderID", response.data.chats[0].chat.msg[response.data.chats[0].chat.msg.length - 1].from._id);
+          })
+          .catch(error => {
+              console.error('Error fetching data: ', error);
+          });
+  }, [emailType]);
+
+
   const typeData = [
     { icon: CiInboxIn, type: "Inbox", to: "index" },
     { icon: LuSend, type: "Sent Emails", to: "send" },
@@ -38,13 +61,13 @@ export default function NavMessage() {
         <ul className={style.ul}>
           {typeData.map((obj, index) => (
 
-            <NavLink
+            <NavLink key={index}
               to={`${obj.to}`}
               className={({ isActive }) =>
                 isActive ? style.active : ""
               }
             >
-              <li className={style.typesEmail} key={index} title={obj.type}>
+              <li className={style.typesEmail} title={obj.type}>
                 <obj.icon className={style.icon} />
                 {obj.type}
 
