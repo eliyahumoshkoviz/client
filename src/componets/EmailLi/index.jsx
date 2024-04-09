@@ -6,8 +6,6 @@ import style from "./style.module.css";
 export default function EmailLi({ chat = {} }) {
   const chatInner = chat.chat || {};
   const { _id, subject, lastDate, sendersDetails } = chatInner;
-const timeOnly = lastDate.split('T')[1].split('.')[0].slice(0, -3);
-
 
   const [isActive, setIsActive] = useState(false);
 

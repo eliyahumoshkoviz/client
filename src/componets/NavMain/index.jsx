@@ -15,7 +15,7 @@ export default function NavMain() {
     { icon: IoIosTimer, title: "Timer", to: 'timer' },
     { icon: MdOutlineTask, title: "Task" },
     { icon: FaRegEye, title: "Watch" },
-    { icon: IoMdPeople, title: "emails" },
+    { icon: IoMdPeople, title: "chats" },
     { icon: IoIosStats, title: "Stats" },
     { icon: IoMdVideocam, title: "Videocam" },
   ];

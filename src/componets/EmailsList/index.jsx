@@ -3,8 +3,8 @@ import InputSearch from "../InputSearch";
 import EmailLi from "../EmailLi";
 import style from "./style.module.css";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import { useState, useEffect } from "react";
+import { axiosReq } from "../../fonction/axiosReq";
 
 export default function index() {
   const [dataMail, setDataMail] = useState([]);
@@ -18,9 +18,7 @@ export default function index() {
 
   const getChats = async () => {
     try {
-      const { data } = await axios.get(
-        `http://localhost:5050/user/${emailType}`
-      );
+      const data = await axiosReq({url:`user/${emailType}`})
       setDataMail(data.chats);
     } catch (error) {
       console.error("Error fetching data: ", error?.response);

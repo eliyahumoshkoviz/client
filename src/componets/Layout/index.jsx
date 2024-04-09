@@ -15,7 +15,7 @@ export default function Layout() {
         <Route path="watch" element={<h1>watch</h1>} />
         <Route path="stats" element={<h1>stats</h1>} />
         <Route path="videocam" element={<h1>videocom</h1>} />
-        <Route path="user" element={<NavMessageLyout />}>
+        <Route path="chats" element={<NavMessageLyout />}>
           <Route path=":emailType" element={<EmailsListLyout />}>
             <Route path=":emailId" element={<EmailPageLyout />} />
           </Route>
