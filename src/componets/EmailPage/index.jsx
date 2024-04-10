@@ -1,7 +1,8 @@
-import  EmailTitle  from '../EmailTitle';
-
-import MsgLi from '../MsgLi';
 import style from './style.module.css';
+import { useParams } from 'react-router';
+
+import  EmailTitle  from '../EmailTitle';
+import MsgLi from '../MsgLi';
 
 
 const emails = [
@@ -104,12 +105,17 @@ const emails = [
 const user = { "userId": "602c49ceb02aca8db6f826d", "mail": "user2@example.com" }
 
 export default function EmailPage() {
+
+    const { emailId } = useParams()
+
     return (
         <div className={style.container} >
             <EmailTitle email={emails[0].email} />
+            <div className={style.messagesLi}>
             {emails[1].email.msg.map((msg) => (
                 <MsgLi key={msg._id} msg={msg} user={user} />
             ))}
+            </div>
         </div>
     )
 }
