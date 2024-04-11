@@ -11,8 +11,11 @@ import { CiInboxIn } from "react-icons/ci";
 import { LuSend } from "react-icons/lu";
 import { MdDelete, MdKeyboardArrowLeft } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 export default function NavMessage() {
+  const navigate = useNavigate();
   const typeData = [
     { icon: CiInboxIn, type: "Inbox", to: "inbox" },
     { icon: LuSend, type: "Sent Emails", to: "sent" },
@@ -31,7 +34,9 @@ export default function NavMessage() {
     <>
       <div className={style.container}>
         <div className={style.title}>
-          <MdKeyboardArrowLeft className={style.iconTitle} />{" "}
+          <div onClick={()=>{navigate(-1)}}>
+            <MdKeyboardArrowLeft className={style.iconTitle} />{" "}
+          </div>
           <h1 className={style.Textitle}>MailBox</h1>
         </div>
         <NewMsgBtn />
