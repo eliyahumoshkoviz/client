@@ -1,8 +1,7 @@
 import React from "react";
 import style from "./style.module.css";
 
-export default function EmailTitle({ email }) {
-  const { subject, lastDate } = email;
+export default function EmailTitle( {subject, lastDate} ) {
 
   return (
     <div className={style.container}>

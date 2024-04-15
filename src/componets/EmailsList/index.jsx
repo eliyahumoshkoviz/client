@@ -10,16 +10,16 @@ export default function index() {
   const [dataMail, setDataMail] = useState([]);
   const [activeChat, setActiveChat] = useState("");
 
-  let { emailType } = useParams();
+  let { chatType } = useParams();
 
   useEffect(() => {
     setDataMail([]);
     getChats();
-  }, [emailType]);
+  }, [chatType]);
 
   const getChats = async () => {
     try {
-      const data = await axiosReq({ url: `user/${emailType}` })
+      const data = await axiosReq({ url: `user/${chatType}` })
       setDataMail(data.chats);
     } catch (error) {
       console.error("Error fetching data: ", error?.response);

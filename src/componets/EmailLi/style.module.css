@@ -5,14 +5,12 @@
   gap: 10px;
   background-color: var(--gray-bd-color);
   border-radius: 7px;
-  padding: 7px;
   width: 100%;
 }
 
 .emailLiActive {
   background-color: #ffffff;
 }
-
 
 .main:hover {
   box-shadow: gray 1px 1px 1px;
@@ -31,7 +29,18 @@
 .title {
   font-weight: 600;
   font-size: 15.5px;
+
+  width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
+
+
+
+
+
 
 .text {
   width: 228px;

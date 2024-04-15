@@ -7,7 +7,7 @@ import EmailPageLyout from "../EmailPageLyout";
 import Login from "../../pages/Login";
 
 export default function Layout() {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState("a");
   if (user) {
     return (
       <Routes>
@@ -19,8 +19,8 @@ export default function Layout() {
           <Route path="stats" element={<h1>stats</h1>} />
           <Route path="videocam" element={<h1>videocom</h1>} />
           <Route path="chats" element={<NavMessageLyout />}>
-            <Route path=":emailType" element={<EmailsListLyout />}>
-              <Route path=":emailId" element={<EmailPageLyout />} />
+            <Route path=":chatType" element={<EmailsListLyout />}>
+              <Route path=":chatId" element={<EmailPageLyout />} />
             </Route>
           </Route>
         </Route>
