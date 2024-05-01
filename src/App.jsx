@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Layout from "./componets/Layout";
+import Register from './pages/Register' 
 
 export default function App() {
 
@@ -9,8 +10,8 @@ export default function App() {
       <div>
      
         {/* <Login /> */}
-        {/* <Register/> */}
-        <Layout />
+        <Register/>
+        {/* <Layout /> */}
       </div>
   );
 }
