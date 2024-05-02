@@ -7,18 +7,19 @@ export default function RegisterPage() {
   const navigate = useNavigate();
 
   const handelSubmit = async (e) => {
+    debugger
     e.preventDefault();
     const df = new FormData(e.target);
     const detailsUser = Object.fromEntries(df);
     const fullName = `${detailsUser.firstName} ${detailsUser.lastName}`;
     try {
-      console.log("kkk");
-      const res = await axiosReq({
-        method: "POST",
-        url: `/users/register`,
-        body: { ...detailsUser, fullName: fullName },
-      });
-      if (res) navigate("/login");
+      // const res = await axiosReq({
+      //   method: "POST",
+      //   url: `/users/register`,
+      //   body: { ...detailsUser, fullName: fullName },
+      // });
+      console.log({ ...detailsUser, fullName })
+      // if (res) navigate("/login");
     } catch (error) {
       console.log(error);
     }
@@ -41,6 +42,7 @@ export default function RegisterPage() {
               className={styles.input}
               placeholder="Email Adress"
               name={"email"}
+              required
             />
             <p style={{ color: "red" }}>*</p>
           </div>
@@ -50,6 +52,7 @@ export default function RegisterPage() {
               className={styles.input}
               placeholder="First Name"
               name={"firstName"}
+              required
             />
             <p style={{ color: "red" }}>*</p>
           </div>
@@ -57,8 +60,9 @@ export default function RegisterPage() {
             <input
               type="text"
               className={styles.input}
-              placeholder="Lest Name"
-              name={"lestName"}
+              placeholder="LastName"
+              name={"lastName"}
+              required
             />
             <p style={{ color: "red" }}>*</p>
           </div>
@@ -66,15 +70,15 @@ export default function RegisterPage() {
             <input
               type="text"
               className={styles.input}
-              placeholder="Passwors"
-              name={"passwors"}
+              placeholder="Password"
+              name={"password"}
+              required
             />
             <p style={{ color: "red" }}>*</p>
           </div>
-          <input className={styles.submit} type="submit" value="Register" />
+          <input className={styles.submit} type="submit" value="Register"/>
         </form>
 
-        <div className={styles.end}></div>
         <div className={styles.register}>
           <div className={styles.terms}>
             <p>Allredy have an account? </p>

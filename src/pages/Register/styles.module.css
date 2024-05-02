@@ -61,11 +61,7 @@
   align-items: center;
   gap: 10px;
 }
-.end{
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-}
+
 .link{
   color: var(--primary-color);
 }
@@ -95,4 +91,5 @@
   user-select: none;
   margin-left: auto;
   margin-right: auto;
+  border: none;
   }
