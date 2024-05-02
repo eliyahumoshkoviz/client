@@ -15,11 +15,11 @@ export default function Login() {
         <h1 className={style.title}>Welcome To MailBox</h1>
         <div>
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" required onChange={handleChange}/>
+          <input className={style.input} type="email" id="email" name="email" required onChange={handleChange}/>
         </div>
         <div>
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" required onChange={handleChange}/>
+          <input className={style.input} type="password" id="password" name="password" required onChange={handleChange}/>
         </div>
         <div className={style.actions}>
           <button className={style.login} type="submit">
